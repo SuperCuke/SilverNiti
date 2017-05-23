@@ -1,0 +1,32 @@
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<dynamic>
+@using Archetype.Models;
+@{
+    var model = (ArchetypeFieldsetModel)ViewData["fieldset"];
+    var buttons = model.GetValue<ArchetypeModel>("buttons");
+
+    if (buttons != null)
+    {
+        <div>
+            @foreach (var button in buttons)
+            {
+                if (button?.Alias == "linkButton")
+                {
+                    var link = button.GetValue<Link>("link");
+                    var style = button.GetValue<ListItem>("style");
+                    var cssClass = CssClassMapper.ButtonStyles.GetClassName(style?.Value);
+                    var title = button.GetValue<string>("title");
+                    <a href="@link.Url" class="theme-btn @cssClass">@link.Name</a>
+                }
+                else if (button?.Alias == "videoButton")
+                {
+                    var link = button.GetValue<Link>("link");
+                    <div class="video-btn-box">
+                        <a href="@link.Url" class="lightbox-image">
+                            <span class="fa fa-play"></span>
+                        </a>
+                    </div>
+                }
+            }
+        </div>
+    }
+}

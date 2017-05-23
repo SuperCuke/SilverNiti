@@ -1,0 +1,29 @@
+﻿{  
+  "propertyEditors": [
+    {
+      "alias": "Ozzy.MultiUrlPicker",
+      "name": "Multi Url Picker",
+      "editor": {
+        "view": "~/App_Plugins/Ozzy.PropertieEditors/MultiUrlPicker/MultiUrlPicker.html",
+        "valueType": "JSON"
+      },
+      "prevalues": {
+        "fields": [
+          {
+            "label": "Min number of items",
+            "key": "minNumberOfItems",
+            "view": "number"
+          },
+          {
+            "label": "Max number of items",
+            "key": "maxNumberOfItems",
+            "view": "number"
+          }
+        ]
+      }
+    }
+  ],
+  "javascript": [
+    "/app_plugins/Ozzy.PropertieEditors/MultiUrlPicker/MultiUrlPicker.js"
+  ]
+}

@@ -1,0 +1,23 @@
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<dynamic>
+@using Archetype.Models;
+@{
+    var jsonString = Model.value.Value as string;
+    var configString = Model.editor.config.ToString() as string;
+
+    var archetype = jsonString.DeserializeJsonToArchetype(configString);
+    var content = archetype.FirstOrDefault()?.GetValue<ArchetypeModel>("content");
+
+    string style = Model?.config?.customStyle?.value?.ToString() ?? Model?.editor?.config?.style?.ToString() ?? "";
+
+    string align = Model?.config?.align?.ToString() ?? "";
+    style = style.Replace("#align#", align);
+
+    string marginTop = Model?.config?.marginTop?.ToString() ?? "";
+    style = style.Replace("#margin-top#", marginTop);
+
+    string marginBottom = Model?.config?.marginBottom?.ToString() ?? "";
+    style = style.Replace("#margin-bottom#", marginBottom);
+}
+<div class="@align" style="@style">
+    @Html.ArchetypeContent(content)
+</div>

@@ -1,0 +1,33 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<dynamic>
+
+
+@if (Model?.editor?.config?.markup != null)
+{
+    string markup = Model?.config?.customMarkup?.value?.ToString() ?? Model?.editor?.config?.markup?.ToString() ?? "";
+    string style = Model?.config?.customStyle?.value?.ToString() ?? Model?.editor?.config?.style?.ToString() ?? "";
+
+    var align = Model?.config?.align?.ToString() ?? "";
+    style = style.Replace("#align#", align);
+    markup = markup.Replace("#align#", align);
+
+    var marginTop = Model?.config?.marginTop?.ToString() ?? "";
+    style = style.Replace("#margin-top#", marginTop);
+    markup = markup.Replace("#margin-top#", marginTop);
+
+    var marginBottom = Model?.config?.marginBottom?.ToString() ?? "";
+    style = style.Replace("#margin-bottom#", marginBottom);
+    markup = markup.Replace("#margin-bottom#", marginBottom);
+
+    markup = markup.Replace("#value#", Model.value.ToString());
+    markup = markup.Replace("#style#", style);
+
+    <text>
+        @Html.Raw(markup)
+    </text>
+}
+else
+{
+    <text>
+        <div style="@Model.editor.config.style">@Model.value</div>
+    </text>
+}

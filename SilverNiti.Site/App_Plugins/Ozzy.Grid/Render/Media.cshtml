@@ -1,0 +1,47 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<dynamic>
+
+@if (Model.value != null)
+{
+    var url = Model.value.image;
+    var width = Model?.config?.cropWidth?.ToString() ?? "";
+    var height = Model?.config?.cropHeight?.ToString() ?? "";
+
+    var args = "";
+    if (!String.IsNullOrEmpty(width))
+    {
+        args += "&width=" + width;
+    }
+    if (!String.IsNullOrEmpty(height))
+    {
+        args += "&height=" + height;
+    }
+    if (args != "" && Model.value.focalPoint != null)
+    {
+        args += "&center=" + Model.value.focalPoint.top + "," + Model.value.focalPoint.left;
+        args += "&mode=crop";
+    }
+    if (args != "" && Model.value.focalPoint != null)
+    {
+        url += "?" + args;
+    }
+
+    string markup = Model?.config?.markup?.value?.ToString() ?? Model?.editor?.config?.markup?.ToString() ?? "";
+    string style = Model?.config?.style?.value?.ToString() ?? Model?.editor?.config?.style?.ToString() ?? "";
+
+    var align = Model?.config?.align?.ToString() ?? "center";
+    style = style.Replace("#align#", align);
+    markup = markup.Replace("#align#", align);
+
+    var @class = Model?.config?.@class?.ToString() ?? Model?.editor?.config?.@class?.ToString() ?? "";
+    markup = markup.Replace("#class#", @class);
+
+
+    markup = markup.Replace("#value#", url?.ToString() ?? "");
+    markup = markup.Replace("#caption#", @Model?.value?.caption?.ToString() ?? "");
+    markup = markup.Replace("#style#", style);
+
+    <text>
+        @Html.Raw(markup)
+    </text>
+
+}

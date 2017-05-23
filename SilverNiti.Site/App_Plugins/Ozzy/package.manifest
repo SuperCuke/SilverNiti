@@ -1,0 +1,240 @@
+﻿{
+  "gridEditors": [
+    {
+      "name": "Main Slider",
+      "alias": "ozzy.mainSlider",
+      "view": "/app_plugins/Ozzy.Grid.Archetype/ozzy.archetype.editor.html",
+      "render": "/app_plugins/Ozzy/Grid/Widgets/mainSlider.cshtml",
+      "icon": "icon-code",
+      "config": {
+        "settings": [
+          {
+            "label": "Background color",
+            "description": "Choose background color",
+            "key": "class",
+            "view": "radiobuttonlist",
+            "prevalues": [
+              "light",
+              "dark",
+              "yellow",
+              "blue",
+              "purple",
+              "full",
+              "full triangle"
+            ]
+          },
+          {
+            "label": "xxx",
+            "description": "xxx",
+            "key": "zzz",
+            "view": "boolean"
+          }
+        ],
+        "fieldsetGroups": [],
+        "hidePropertyLabels": false,
+        "showAdvancedOptions": false,
+        "startWithAddButton": false,
+        "hideFieldsetToolbar": false,
+        "enableMultipleFieldsets": false,
+        "hideFieldsetControls": true,
+        "hidePropertyLabel": true,
+        "maxFieldsets": 1,
+        "enableCollapsing": false,
+        "enableCloning": false,
+        "enableDisabling": false,
+        "enableDeepDatatypeRequests": false,
+        "enablePublishing": false,
+        "enableMemberGroups": false,
+        "enableCrossDragging": false,
+        "fieldsets": [
+          {
+            "alias": "mainSlider",
+            "remove": false,
+            "collapse": false,
+            "labelTemplate": "",
+            "icon": "",
+            "label": "Main Slider",
+            "properties": [
+              {
+                "alias": "banners",
+                "remove": false,
+                "collapse": true,
+                "label": "Banners",
+                "helpText": "",
+                "dataTypeGuid": "9541266c-9755-4063-a124-9ed9f8f6a4d3",
+                "value": "",
+                "aliasIsDirty": true,
+                "required": true,
+                "$$hashKey": "2PJ"
+              }
+            ],
+            "group": null,
+            "aliasIsDirty": true,
+            "$$hashKey": "2PA"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Main Content",
+      "alias": "content",
+      "view": "/app_plugins/Ozzy.Grid.Archetype/ozzy.archetype.editor.html",
+      "render": "/app_plugins/Ozzy/Grid/Widgets/content.cshtml",
+      "icon": "icon-code",
+      "config": {
+        "style": "text-align:#align#; margin-top:#margin-top#; margin-bottom:#margin-bottom#",
+        "settings": [
+          {
+            "label": "Align",
+            "description": "Choose align",
+            "key": "align",
+            "view": "radiobuttonlist",
+            "value": "center",
+            "prevalues": [
+              "left",
+              "center",
+              "right"
+            ]
+          },
+          {
+            "label": "Add spacing before",
+            "description": "Add spacing before element",
+            "key": "marginTop",
+            "view": "textstring"
+          },
+          {
+            "label": "Add spacing after",
+            "description": "Add spacing under element",
+            "key": "marginBottom",
+            "view": "textstring"
+          }
+        ],
+        "showAdvancedOptions": false,
+        "startWithAddButton": false,
+        "hideFieldsetToolbar": false,
+        "enableMultipleFieldsets": false,
+        "hideFieldsetControls": true,
+        "hidePropertyLabel": false,
+        "maxFieldsets": 1,
+        "enableCollapsing": false,
+        "enableCloning": false,
+        "enableDisabling": false,
+        "enableDeepDatatypeRequests": false,
+        "enablePublishing": false,
+        "enableMemberGroups": false,
+        "enableCrossDragging": false,
+        "fieldsets": [
+          {
+            "alias": "content",
+            "remove": false,
+            "collapse": false,
+            "labelTemplate": "",
+            "icon": "",
+            "label": "",
+            "properties": [
+              {
+                "alias": "content",
+                "remove": false,
+                "collapse": false,
+                "label": "",
+                "helpText": "",
+                "dataTypeGuid": "0e8963fd-3eff-4d01-a8ee-46e3fabd020c",
+                "value": "",
+                "$$hashKey": "5L2",
+                "aliasIsDirty": true
+              }
+            ],
+            "group": null,
+            "$$hashKey": "5KT",
+            "aliasIsDirty": true
+          }
+        ],
+        "fieldsetGroups": [],
+        "hidePropertyLabels": true
+      }
+    },
+    {
+      "name": "Services List",
+      "alias": "serviceList",
+      "view": "/app_plugins/Ozzy.Grid.Archetype/ozzy.archetype.editor.html",
+      "render": "/app_plugins/Ozzy/Grid/Widgets/serviceList.cshtml",
+      "icon": "icon-code",
+      "config": {
+        "settings": [
+          {
+            "label": "Background color",
+            "description": "Choose background color",
+            "key": "class",
+            "view": "radiobuttonlist",
+            "prevalues": [
+              "light",
+              "dark",
+              "yellow",
+              "blue",
+              "purple",
+              "full",
+              "full triangle"
+            ]
+          },
+          {
+            "label": "xxx",
+            "description": "xxx",
+            "key": "zzz",
+            "view": "boolean"
+          }
+        ],
+        "showAdvancedOptions": false,
+        "startWithAddButton": false,
+        "hideFieldsetToolbar": false,
+        "enableMultipleFieldsets": false,
+        "hideFieldsetControls": true,
+        "hidePropertyLabel": false,
+        "maxFieldsets": 1,
+        "enableCollapsing": false,
+        "enableCloning": false,
+        "enableDisabling": false,
+        "enableDeepDatatypeRequests": false,
+        "enablePublishing": false,
+        "enableMemberGroups": false,
+        "enableCrossDragging": false,
+        "fieldsets": [
+          {
+            "alias": "content",
+            "remove": false,
+            "collapse": false,
+            "labelTemplate": "",
+            "icon": "",
+            "label": "",
+            "properties": [
+              {
+                "alias": "content",
+                "remove": false,
+                "collapse": false,
+                "label": "",
+                "helpText": "",
+                "dataTypeGuid": "0e8963fd-3eff-4d01-a8ee-46e3fabd020c",
+                "value": "",
+                "$$hashKey": "5L2",
+                "aliasIsDirty": true
+              }
+            ],
+            "group": null,
+            "$$hashKey": "5KT",
+            "aliasIsDirty": true
+          }
+        ],
+        "fieldsetGroups": [],
+        "hidePropertyLabels": true
+      }
+    },
+    {
+      "name": "MacroXXX",
+      "alias": "macroXXX",
+      "view": "macro",
+      "icon": "icon-settings-alt",
+      "config": {
+        "macroAlias": "xxx"
+      }
+    }
+  ]
+}

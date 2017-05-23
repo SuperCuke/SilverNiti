@@ -1,0 +1,19 @@
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<dynamic>
+@using Archetype.Models;
+@{
+    var model = (ArchetypeFieldsetModel)ViewData["fieldset"];
+    var text = model.GetValue<string>("text");
+    var icon = model.GetValue<string>("icon");
+    if (!String.IsNullOrEmpty(icon))
+    {
+        <div class="h1">
+            <span class="icon @icon"></span>
+            <h1 style="display:inline">@text</h1>
+        </div>
+    }
+    else
+    {
+        <h1>@text</h1>
+    }
+}
+

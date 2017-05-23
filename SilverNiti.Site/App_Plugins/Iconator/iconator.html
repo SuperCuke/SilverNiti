@@ -1,0 +1,15 @@
+<div ng-controller="Iconator.Controller" class="iconator">
+	<div class="iconator-icon">
+		<span ng-hide="model.value" ng-click="openIconPickerDialog()">Pick an icon...</span>
+		<span style="font-size:32px;" ng-bind-html="renderIconPattern(model.value)" ng-click="openIconPickerDialog()"></span>
+	</div>
+	<div class="iconator-remove" ng-show="model.value">
+		<span ng-click="remove()">Remove...</span>
+	</div>
+	<umb-overlay
+		ng-if="overlay.show"
+		model="overlay"
+		view="overlay.view"
+		position="right">
+	</umb-overlay>
+</div>

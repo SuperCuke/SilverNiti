@@ -1,0 +1,15 @@
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<dynamic>
+@{
+    var model = (ArchetypeFieldsetModel)ViewData["fieldset"];
+    var image = Umbraco.Media(model.GetValue<int>("image"));
+    var content = model.GetValue<ArchetypeModel>("content");
+}
+<div class="inner-box">
+    <div class="image-box">
+        <a href="blog-single.html"><img src="@image.Url" alt="" /></a>
+    </div>
+    <div class="image-content">
+        @Html.ArchetypeContent(content)
+    </div>
+</div>
+

@@ -1,0 +1,6 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<BaseViewModel>
+@{
+    Layout = "SilverNiti.cshtml";
+}
+
+@Html.GetGridHtml(Model.Content, "content", "fanoe");

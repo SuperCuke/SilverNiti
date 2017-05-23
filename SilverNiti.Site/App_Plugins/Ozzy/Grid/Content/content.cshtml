@@ -1,0 +1,17 @@
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<dynamic>
+@using Archetype.Models;
+@{
+    var model = (ArchetypeModel)ViewData["model"];
+}
+@foreach (var fieldset in model.Fieldsets)
+{
+    var partial = "~/App_Plugins/Ozzy/Grid/Content/" + fieldset.Alias + ".cshtml";
+    try
+    {
+        @Html.Partial(partial, (object)Model, new ViewDataDictionary() { { "fieldset", fieldset } })
+    }
+    catch (Exception e)
+    {
+        //todo:
+    }
+}

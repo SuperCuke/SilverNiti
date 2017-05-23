@@ -1,0 +1,15 @@
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<dynamic>
+@using Archetype.Models;
+@using Newtonsoft.Json;
+
+@{
+    var jsonString = Model.value.Value as string;
+    var configString = Model.editor.config.ToString() as string;
+
+    var archetype = jsonString.DeserializeJsonToArchetype(configString);
+    var content = archetype.FirstOrDefault()?.GetValue<ArchetypeModel>("content");
+}
+
+<div class="services-block">
+    @Html.ArchetypeContent(content)
+</div>

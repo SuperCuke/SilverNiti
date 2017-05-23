@@ -1,0 +1,195 @@
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<dynamic>
+@using Archetype.Extensions;
+@using Newtonsoft.Json;
+
+
+@{
+    var jsonString = Model.value.Value as string;
+    var configString = Model.editor.config.ToString() as string;
+
+    var archetype = jsonString.DeserializeJsonToArchetype(configString);
+    var banners = archetype.First().GetValue<ArchetypeModel>("banners");
+}
+<section class="main-slider" data-start-height="800" data-slide-overlay="yes">
+    <div class="tp-banner-container">
+        <div class="tp-banner">
+            <ul>
+                @foreach (var banner in banners)
+                {
+                    var bannerMedia = banner.GetValue<IPublishedContent>("background");//Umbraco.Media(banner.GetValue<int>("background"));
+                    var bannerContent = banner.GetValue<ArchetypeModel>("content");
+                    var partial = "~/App_Plugins/Ozzy/Grid/Content/content.cshtml";
+
+                    <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="@bannerMedia.Url" data-saveperformance="off" data-title="Awesome Title Here">
+                        <img src="@bannerMedia.Url" alt="" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+
+                        <div class="tp-caption sfr sfb tp-resizeme"
+                             data-x="center" data-hoffset="0"
+                             data-y="center" data-voffset="-10"
+                             data-speed="1500"
+                             data-start="0"
+                             data-easing="easeOutExpo"
+                             data-splitin="none"
+                             data-splitout="none"
+                             data-elementdelay="0.01"
+                             data-endelementdelay="0.3"
+                             data-endspeed="1200"
+                             data-endeasing="Power4.easeIn">
+                            @Html.Partial(partial, (object)Model, new ViewDataDictionary() { { "model", bannerContent } })
+                        </div>
+                        <!--
+                            <div class="tp-banner-container">
+                            <div class="tp-banner">
+                                <ul>
+
+                                    <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="images/main-slider/1.jpg"  data-saveperformance="off"  data-title="Awesome Title Here">
+                                    <img src="images/main-slider/1.jpg"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+
+                                    <div class="tp-caption sfr sfb tp-resizeme"
+                                    data-x="center" data-hoffset="0"
+                                    data-y="center" data-voffset="-10"
+                                    data-speed="1500"
+                                    data-start="0"
+                                    data-easing="easeOutExpo"
+                                    data-splitin="none"
+                                    data-splitout="none"
+                                    data-elementdelay="0.01"
+                                    data-endelementdelay="0.3"
+                                    data-endspeed="1200"
+                                    data-endeasing="Power4.easeIn"><h2 class="big-title text-center">WE ARE PALERMO Expertise in Sales Training & <br> Sales Effectiveness Solutions</h2></div>
+
+                                    <div class="tp-caption sfr sfb tp-resizeme"
+                                    data-x="center" data-hoffset="0"
+                                    data-y="center" data-voffset="-120"
+                                    data-speed="1500"
+                                    data-start="500"
+                                    data-easing="easeOutExpo"
+                                    data-splitin="none"
+                                    data-splitout="none"
+                                    data-elementdelay="0.01"
+                                    data-endelementdelay="0.3"
+                                    data-endspeed="1200"
+                                    data-endeasing="Power4.easeIn"><div class="normal-text text-center">The ship set ground on the shore that this group</div>
+                                        <div class="slider-separeter-line">
+                                            <div class="line-one"></div>
+                                            <div class="line-two"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="tp-caption sfl sfb tp-resizeme"
+                                    data-x="center" data-hoffset="0"
+                                    data-y="center" data-voffset="120"
+                                    data-speed="1500"
+                                    data-start="1000"
+                                    data-easing="easeOutExpo"
+                                    data-splitin="none"
+                                    data-splitout="none"
+                                    data-elementdelay="0.01"
+                                    data-endelementdelay="0.3"
+                                    data-endspeed="1200"
+                                    data-endeasing="Power4.easeIn"><a href="contact.html" class="theme-btn btn-style-one">Contact Us</a> &nbsp; &nbsp; <a href="contact.html" class="theme-btn btn-style-two">Read More</a></div>
+
+                                    </li>
+
+                                    <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="images/main-slider/2.jpg"  data-saveperformance="off"  data-title="Awesome Title Here">
+                                    <img src="images/main-slider/2.jpg"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+
+                                    <div class="tp-caption sfl sfb tp-resizeme"
+                                    data-x="left" data-hoffset="40"
+                                    data-y="center" data-voffset="-100"
+                                    data-speed="1500"
+                                    data-start="0"
+                                    data-easing="easeOutExpo"
+                                    data-splitin="none"
+                                    data-splitout="none"
+                                    data-elementdelay="0.01"
+                                    data-endelementdelay="0.3"
+                                    data-endspeed="1200"
+                                    data-endeasing="Power4.easeIn"><div class="normal-text">The ship set ground on the shore that this group</div></div>
+
+                                    <div class="tp-caption sfr sfb tp-resizeme"
+                                    data-x="left" data-hoffset="40"
+                                    data-y="center" data-voffset="10"
+                                    data-speed="1500"
+                                    data-start="500"
+                                    data-easing="easeOutExpo"
+                                    data-splitin="none"
+                                    data-splitout="none"
+                                    data-elementdelay="0.01"
+                                    data-endelementdelay="0.3"
+                                    data-endspeed="1200"
+                                    data-endeasing="Power4.easeIn"><h2 class="big-title">PALERMO DELIVERS THE HIGHEST QUALITY <br> & IMPACTFUL LEARNING EXPERIENCE</h2></div>
+
+                                    <div class="tp-caption sfl sfb tp-resizeme"
+                                    data-x="left" data-hoffset="40"
+                                    data-y="center" data-voffset="130"
+                                    data-speed="1500"
+                                    data-start="1000"
+                                    data-easing="easeOutExpo"
+                                    data-splitin="none"
+                                    data-splitout="none"
+                                    data-elementdelay="0.01"
+                                    data-endelementdelay="0.3"
+                                    data-endspeed="1200"
+                                    data-endeasing="Power4.easeIn"><a href="contact.html" class="theme-btn btn-style-one">Contact Us</a> &nbsp; &nbsp; <a href="contact.html" class="theme-btn btn-style-two">Read More</a></div>
+
+                                    </li>
+
+                                    <li class="blue-overlay" data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="images/main-slider/3.jpg"  data-saveperformance="off"  data-title="Awesome Title Here">
+                                    <img src="images/main-slider/3.jpg"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+
+                                    <div class="tp-caption sfr sfb tp-resizeme"
+                                    data-x="center" data-hoffset="0"
+                                    data-y="center" data-voffset="-120"
+                                    data-speed="1500"
+                                    data-start="0"
+                                    data-easing="easeOutExpo"
+                                    data-splitin="none"
+                                    data-splitout="none"
+                                    data-elementdelay="0.01"
+                                    data-endelementdelay="0.3"
+                                    data-endspeed="1200"
+                                    data-endeasing="Power4.easeIn"><h2 class="big-title">WE Build and develop high performing teams</h2></div>
+
+                                    <div class="tp-caption sfr sfb tp-resizeme"
+                                    data-x="center" data-hoffset="0"
+                                    data-y="center" data-voffset="100"
+                                    data-speed="1500"
+                                    data-start="500"
+                                    data-easing="easeOutExpo"
+                                    data-splitin="none"
+                                    data-splitout="none"
+                                    data-elementdelay="0.01"
+                                    data-endelementdelay="0.3"
+                                    data-endspeed="1200"
+                                    data-endeasing="Power4.easeIn"><div class="normal-text text-center">A family that's the way the Love Boat promises something for everyone that this group would <br> we all became the brady bunch  that this group.</div></div>
+
+                                    <div class="tp-caption sfb sfb tp-resizeme"
+                                    data-x="center" data-hoffset="0"
+                                    data-y="center" data-voffset="5"
+                                    data-speed="1500"
+                                    data-start="1000"
+                                    data-easing="easeOutExpo"
+                                    data-splitin="none"
+                                    data-splitout="none"
+                                    data-elementdelay="0.01"
+                                    data-endelementdelay="0.3"
+                                    data-endspeed="1200"
+                                    data-endeasing="Power4.easeIn">
+                                        <div class="text-center">
+                                            <div class="video-btn-box"><a href="https://www.youtube.com/watch?v=0e1uTwSRGgI" class="lightbox-image"><span class="fa fa-play"></span></a></div>
+                                        </div>
+                                    </div>
+
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        -->
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</section>

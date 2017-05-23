@@ -1,0 +1,9 @@
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<dynamic>
+@using Archetype.Models;
+@{
+    var model = (ArchetypeFieldsetModel)ViewData["fieldset"];
+    var text = model.GetValue<string>("text");    
+}
+@Html.Raw(text)
+
+

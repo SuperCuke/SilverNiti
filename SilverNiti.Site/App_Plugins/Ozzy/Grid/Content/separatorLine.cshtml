@@ -1,0 +1,15 @@
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<dynamic>
+@using Archetype.Models;
+@{
+    var model = (ArchetypeFieldsetModel)ViewData["fieldset"];
+    var left = model.GetValue<bool>("leftEdge");
+    var right = model.GetValue<bool>("rightEdge");
+    var classString = "separeter-line";
+    if (left) { classString += " separeter-left"; }
+    if (right) { classString += " separeter-right"; }
+}
+<!--Separeter Line-->
+<div class="@classString">
+    <div class="line-one"></div>
+    <div class="line-two"></div>
+</div>

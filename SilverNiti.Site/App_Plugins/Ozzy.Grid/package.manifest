@@ -1,0 +1,111 @@
+﻿{
+  "gridEditors": [
+    {
+      "name": "Headline",
+      "alias": "ozzy.headline",
+      "view": "textstring",
+      "render": "/app_plugins/Ozzy.Grid/Render/Textstring.cshtml",
+      "icon": "icon-coin",
+      "config": {
+        "settings": [
+          {
+            "label": "Align",
+            "description": "Choose align",
+            "key": "align",
+            "view": "radiobuttonlist",
+            "value": "center",
+            "prevalues": [
+              "center",
+              "left",
+              "right"
+            ]
+          },
+          {
+            "label": "Add spacing before",
+            "description": "Add spacing before element",
+            "key": "marginTop",
+            "view": "textstring"
+          },
+          {
+            "label": "Add spacing after",
+            "description": "Add spacing under element",
+            "key": "marginBottom",
+            "view": "textstring"
+          }
+        ],
+        "style": "text-align:#align#; margin-top:#margin-top#; margin-bottom:#margin-bottom#",
+        "markup": "<h2 style='#style#'>#value#</h2>"
+      }
+    },
+    {
+      "name": "Paragraph",
+      "alias": "ozzy.paragraph",
+      "view": "textstring",
+      "render": "/app_plugins/Ozzy.Grid/Render/Textstring.cshtml",
+      "icon": "icon-font",
+      "config": {
+        "settings": [
+          {
+            "label": "Align",
+            "description": "Choose align",
+            "key": "align",
+            "view": "radiobuttonlist",
+            "value": "center",
+            "prevalues": [
+              "center",
+              "left",
+              "right"
+            ]
+          }
+        ],
+        "style": "text-align:#align#;",
+        "markup": "<p style='#style#'>#value#</p>"
+      }
+    },
+    {
+      "name": "Image",
+      "alias": "ozzy.media",
+      "view": "media",
+      "render": "/app_plugins/Ozzy.Grid/Render/Media.cshtml",
+      "icon": "icon-picture",
+      "config": {
+        "settings": [
+          {
+            "label": "Crop Width",
+            "description": "Choose Crop Width",
+            "key": "cropWidth",
+            "view": "decimal"
+          },
+          {
+            "label": "Crop Height",
+            "description": "Choose Crop Height",
+            "key": "cropHeight",
+            "view": "decimal"
+          },
+          {
+            "label": "Align",
+            "description": "Choose background color",
+            "key": "class",
+            "view": "radiobuttonlist",
+            "prevalues": [
+              {
+                "value": "",
+                "label": "Left"
+              },
+              {
+                "value": "center-block",
+                "label": "Center"
+              },
+              {
+                "value": "pull-right",
+                "label": "Right"
+              }
+            ]
+          }
+        ],
+        "style": "text-align:#align#;",
+        "markup": "<img class='#class#' src='#value#' alt='#caption#'>"
+      }
+    }
+  ]
+}

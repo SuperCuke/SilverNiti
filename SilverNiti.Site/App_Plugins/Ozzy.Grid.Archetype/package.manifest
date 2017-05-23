@@ -1,0 +1,6 @@
+﻿{
+  "javascript": [
+    "/app_plugins/Ozzy.Grid.Archetype/ozzy.archetype.controller.js",
+    "/app_plugins/Ozzy.Grid.Archetype/ozzy.archetype.controller.fix.js"
+  ]
+}

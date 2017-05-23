@@ -1,0 +1,55 @@
+@model NavigationViewModel<NavigationViewModelItem>
+<nav class="main-menu">
+    <div class="navbar-header">
+        <!-- Toggle Button -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <div class="navbar-collapse collapse clearfix">
+        <ul class="navigation clearfix">
+            @foreach (var page in @Model)
+            {
+                var classname = String.Empty;
+                if (page.IsActive) { classname = classname + "current "; }
+                if (page.HasChildrens) { classname = classname + "dropdown"; }
+                var finalclass = String.IsNullOrEmpty(classname) ? MvcHtmlString.Create(string.Empty) : MvcHtmlString.Create(string.Format(" class=\"{0}\"", classname));
+                <li @finalclass>
+                    <a href="@page.Url">@page.Title</a>
+                    @if (@page.HasChildrens && @page.IsActiveNode)
+                    {
+                        <ul>
+                            @foreach (var subpage in @page.Childrens)
+                            {
+                                var classname2 = String.Empty;
+                                if (subpage.IsActive) { classname2 = classname2 + "current "; }
+                                if (subpage.HasChildrens) { classname2 = classname2 + "dropdown"; }
+                                var finalclass2 = String.IsNullOrEmpty(classname2) ? MvcHtmlString.Create(string.Empty) : MvcHtmlString.Create(string.Format(" class=\"{0}\"", classname2));
+                                <li @finalclass2>
+                                    <a href="@subpage.Url">@subpage.Title</a>
+                                    @if (@subpage.HasChildrens && @subpage.IsActiveNode)
+                                    {
+                                        <ul>
+                                            @foreach (var subpage2 in @subpage.Childrens)
+                                            {
+                                                var classname3 = String.Empty;
+                                                if (subpage2.IsActive) { classname3 = classname2 + "current "; }
+                                                if (subpage2.HasChildrens) { classname3 = classname2 + "dropdown"; }
+                                                var finalclass3 = String.IsNullOrEmpty(classname2) ? MvcHtmlString.Create(string.Empty) : MvcHtmlString.Create(string.Format(" class=\"{0}\"", classname3));
+                                                <li @finalclass3>
+                                                    <a href="@subpage2.Url">@subpage2.Title</a>
+                                                </li>
+                                            }
+                                        </ul>
+                                    }
+                                </li>
+                            }
+                        </ul>
+                    }
+                </li>
+            }
+        </ul>
+    </div>
+</nav>
