@@ -154,6 +154,84 @@
       }
     },
     {
+      "name": "Employee Grid",
+      "alias": "employeeGrid",
+      "view": "/app_plugins/Ozzy.Grid.Archetype/ozzy.archetype.editor.html",
+      "render": "/app_plugins/Ozzy/Grid/Widgets/employeeGrid.cshtml",
+      "icon": "icon-code",
+      "config": {
+        "style": "text-align:#align#; margin-top:#margin-top#; margin-bottom:#margin-bottom#",
+        "settings": [
+          {
+            "label": "Align",
+            "description": "Choose align",
+            "key": "align",
+            "view": "radiobuttonlist",
+            "value": "center",
+            "prevalues": [
+              "left",
+              "center",
+              "right"
+            ]
+          },
+          {
+            "label": "Add spacing before",
+            "description": "Add spacing before element",
+            "key": "marginTop",
+            "view": "textstring"
+          },
+          {
+            "label": "Add spacing after",
+            "description": "Add spacing under element",
+            "key": "marginBottom",
+            "view": "textstring"
+          }
+        ],
+        "showAdvancedOptions": false,
+        "startWithAddButton": true,
+        "hideFieldsetToolbar": false,
+        "enableMultipleFieldsets": true,
+        "hideFieldsetControls": false,
+        "hidePropertyLabel": false,
+        "maxFieldsets": null,
+        "enableCollapsing": true,
+        "enableCloning": false,
+        "enableDisabling": true,
+        "enableDeepDatatypeRequests": false,
+        "enablePublishing": false,
+        "enableMemberGroups": false,
+        "enableCrossDragging": false,
+        "fieldsets": [
+          {
+            "alias": "employeesGrid",
+            "remove": false,
+            "collapse": false,
+            "labelTemplate": "EmployeesGrid",
+            "icon": "",
+            "label": "EmployeesGrid",
+            "properties": [
+              {
+                "alias": "employees",
+                "remove": false,
+                "collapse": true,
+                "label": "Employees",
+                "helpText": "Employees",
+                "dataTypeGuid": "a6857c73-d6e9-480c-b6e6-f15f6ad11125",
+                "value": "",
+                "required": true,
+                "aliasIsDirty": true,
+                "$$hashKey": "3W2"
+              }
+            ],
+            "group": null,
+            "aliasIsDirty": true,
+            "$$hashKey": "3VT"
+          }
+        ],
+        "fieldsetGroups": []
+      }
+    },
+    {
       "name": "Services List",
       "alias": "serviceList",
       "view": "/app_plugins/Ozzy.Grid.Archetype/ozzy.archetype.editor.html",

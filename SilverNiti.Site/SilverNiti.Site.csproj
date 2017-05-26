@@ -750,6 +750,7 @@
     <Content Include="fonts\revicons90c6.eot" />
     <Content Include="fonts\revicons90c6.ttf" />
     <Content Include="fonts\revicons90c6.woff" />
+    <Content Include="App_Plugins\Ozzy\Grid\Widgets\employeeGrid.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
