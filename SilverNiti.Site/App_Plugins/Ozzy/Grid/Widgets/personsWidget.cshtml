@@ -1,9 +1,5 @@
 @inherits Umbraco.Web.Mvc.UmbracoViewPage<dynamic>
-@using Archetype.Extensions;
-@using Newtonsoft.Json;
 @using Umbraco;
-@using Umbraco.Core;
-@using Umbraco.Web.Extensions;
 
 
 @{
@@ -11,20 +7,18 @@
     var configString = Model.editor.config.ToString() as string;
 
     var archetype = jsonString.DeserializeJsonToArchetype(configString);
-    var employeeRootId = archetype.First().GetValue("employees");
-
-    var employeeRoot = Udi.Parse(employeeRootId).ToPublishedContent();
+    var persons = archetype.First().GetValue<IEnumerable<IPublishedContent>>("persons");
 }
 <section class="team-section" style="padding:0">
     <div class="auto-container">
         <div class="row clearfix">
-            @foreach (var employee in employeeRoot.Children)
+            @foreach (var person in persons)
             {
             <!--Team Member-->
                 <div class="team-member col-lg-3 col-md-6 col-sm-6 col-xs-12">
                     <div class="inner-box wow fadeIn animated" data-wow-delay="0ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeIn;">
                         <figure class="image-box" style="height:auto;width:auto">
-                            <img src="@employee.GetPropertyValue("Image")" alt="">
+                            <img src="@person.GetPropertyValue("Image")" alt="">
                             @*<div class="overlay-box">
                                     <ul class="social-icon-one">
                                         <li><a href="#"><span class="fa fa-facebook-f"></span></a></li>
@@ -34,8 +28,8 @@
                                 </div>*@
                         </figure>
                         <div class="lower-content">
-                            <h3><a href="#">@employee.GetPropertyValue("FullName")</a></h3>
-                            <div class="designation">@employee.GetPropertyValue("Role")</div>
+                            <h3><a href="#">@person.GetPropertyValue("FullName")</a></h3>
+                            <div class="designation">@person.GetPropertyValue("Role")</div>
                         </div>
                     </div>
                 </div>

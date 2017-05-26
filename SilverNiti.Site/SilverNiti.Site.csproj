@@ -448,6 +448,9 @@
     <Reference Include="Umbraco.ModelsBuilder, Version=3.0.7.99, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Umbraco.ModelsBuilder.3.0.7\lib\Umbraco.ModelsBuilder.dll</HintPath>
     </Reference>
+    <Reference Include="Umbraco.ModelsBuilder.Api, Version=3.0.6.97, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Umbraco.ModelsBuilder.Api.3.0.6\lib\Umbraco.ModelsBuilder.Api.dll</HintPath>
+    </Reference>
     <Reference Include="umbraco.providers, Version=1.0.6337.40638, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Core.7.6.1\lib\net45\umbraco.providers.dll</HintPath>
     </Reference>
@@ -719,7 +722,7 @@
     <Content Include="App_Plugins\Ozzy\Grid\Content\pointOnMap.cshtml" />
     <Content Include="App_Plugins\Ozzy\Grid\Content\separatorLine.cshtml" />
     <Content Include="App_Plugins\Ozzy\Grid\Widgets\content.cshtml" />
-    <Content Include="App_Plugins\Ozzy\Grid\Widgets\content2.cshtml" />
+    <Content Include="App_Plugins\Ozzy\Grid\Widgets\personsWidget.cshtml" />
     <Content Include="App_Plugins\Ozzy\Grid\Widgets\mainSlider.cshtml" />
     <Content Include="App_Plugins\Ozzy\Grid\Widgets\serviceList.cshtml" />
     <Content Include="App_Plugins\Ozzy\package.manifest" />
@@ -751,6 +754,8 @@
     <Content Include="fonts\revicons90c6.ttf" />
     <Content Include="fonts\revicons90c6.woff" />
     <Content Include="App_Plugins\Ozzy\Grid\Widgets\employeeGrid.cshtml" />
+    <Content Include="App_Plugins\Ozzy\Grid\Widgets\content2.cshtml" />
+    <Content Include="Views\SilverNitiEmployee.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
