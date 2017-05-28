@@ -459,22 +459,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContentModels\ContentPage.cs" />
-    <Compile Include="ContentModels\ContentPage.generated.cs" />
-    <Compile Include="ContentModels\File.generated.cs" />
-    <Compile Include="ContentModels\Folder.generated.cs" />
-    <Compile Include="ContentModels\Image.generated.cs" />
-    <Compile Include="ContentModels\Member.generated.cs" />
-    <Compile Include="ContentModels\SilverNitiBase.generated.cs" />
-    <Compile Include="ContentModels\SilverNitiDataRoot.generated.cs" />
-    <Compile Include="ContentModels\SilverNitiEmployee.generated.cs" />
-    <Compile Include="ContentModels\SilverNitiEmployeeFolder.generated.cs" />
-    <Compile Include="ContentModels\SilverNitiEvent.generated.cs" />
-    <Compile Include="ContentModels\SilverNitiEventsFolder.generated.cs" />
+    <Compile Include="ContentModels\Generated\ContentPage.generated.cs" />
+    <Compile Include="ContentModels\Generated\File.generated.cs" />
+    <Compile Include="ContentModels\Generated\Folder.generated.cs" />
+    <Compile Include="ContentModels\Generated\Image.generated.cs" />
+    <Compile Include="ContentModels\Generated\Member.generated.cs" />
+    <Compile Include="ContentModels\Generated\SilverNitiBase.generated.cs" />
+    <Compile Include="ContentModels\Generated\SilverNitiDataRoot.generated.cs" />
+    <Compile Include="ContentModels\Generated\SilverNitiEmployee.generated.cs" />
+    <Compile Include="ContentModels\Generated\SilverNitiEmployeeFolder.generated.cs" />
+    <Compile Include="ContentModels\Generated\SilverNitiEvent.generated.cs" />
+    <Compile Include="ContentModels\Generated\SilverNitiEventsFolder.generated.cs" />
     <Compile Include="ContentModels\SilverNitiHomePage.cs" />
-    <Compile Include="ContentModels\SilverNitiHomePage.generated.cs" />
-    <Compile Include="ContentModels\SilverNitiNavigation.generated.cs" />
-    <Compile Include="ContentModels\SilverNitiSeo.generated.cs" />
-    <Compile Include="ContentModels\Xxx.generated.cs" />
+    <Compile Include="ContentModels\Generated\SilverNitiHomePage.generated.cs" />
+    <Compile Include="ContentModels\Generated\SilverNitiNavigation.generated.cs" />
+    <Compile Include="ContentModels\Generated\SilverNitiSeo.generated.cs" />
+    <Compile Include="ContentModels\Generated\Xxx.generated.cs" />
     <Compile Include="Controllers\SilverNitiHomePageController.cs" />
     <Compile Include="Controllers\Surface\ContactFormController.cs" />
     <Compile Include="Controllers\Surface\PartialsSurfaceController.cs" />
