@@ -30,6 +30,15 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'supercuke|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\supercuke\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
@@ -456,10 +465,16 @@
     <Compile Include="ContentModels\Image.generated.cs" />
     <Compile Include="ContentModels\Member.generated.cs" />
     <Compile Include="ContentModels\SilverNitiBase.generated.cs" />
+    <Compile Include="ContentModels\SilverNitiDataRoot.generated.cs" />
+    <Compile Include="ContentModels\SilverNitiEmployee.generated.cs" />
+    <Compile Include="ContentModels\SilverNitiEmployeeFolder.generated.cs" />
+    <Compile Include="ContentModels\SilverNitiEvent.generated.cs" />
+    <Compile Include="ContentModels\SilverNitiEventsFolder.generated.cs" />
     <Compile Include="ContentModels\SilverNitiHomePage.cs" />
     <Compile Include="ContentModels\SilverNitiHomePage.generated.cs" />
     <Compile Include="ContentModels\SilverNitiNavigation.generated.cs" />
     <Compile Include="ContentModels\SilverNitiSeo.generated.cs" />
+    <Compile Include="ContentModels\Xxx.generated.cs" />
     <Compile Include="Controllers\SilverNitiHomePageController.cs" />
     <Compile Include="Controllers\Surface\ContactFormController.cs" />
     <Compile Include="Controllers\Surface\PartialsSurfaceController.cs" />

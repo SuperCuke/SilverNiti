@@ -1,1 +1,1 @@
-"../tools/Umbraco.ModelsBuilder.Console/Umbraco.ModelsBuilder.Console.exe" -d ContentModels -ns SilverNiti.Core.ContentModels "http://sashaozz%%40silverniti.ru:silverniti-6SashaOzz6@localhost:17002"
+"../tools/Umbraco.ModelsBuilder.Console/Umbraco.ModelsBuilder.Console.exe" -d ContentModels/Generated -ns SilverNiti.Core.ContentModels "http://sashaozz%%40silverniti.ru:silvernitiSashaOzz666@localhost:17002"

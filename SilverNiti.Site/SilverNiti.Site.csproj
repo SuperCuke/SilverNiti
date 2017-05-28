@@ -685,13 +685,9 @@
     <Content Include="config\uSyncBackOffice.Config" />
     <Content Include="App_Plugins\uSync\package.manifest" />
     <Content Include="App_Plugins\uSync.Content\package.manifest" />
-    <Content Include="Views\BlogOverview.cshtml" />
-    <Content Include="Views\BlogPost.cshtml" />
     <Content Include="Views\ContentPage.cshtml" />
-    <Content Include="Views\Home.cshtml" />
     <Content Include="Views\HomePage.cshtml" />
     <Content Include="Views\Main.cshtml" />
-    <Content Include="Views\Master.cshtml" />
     <Content Include="Views\Partials\BottomNavigation.cshtml" />
     <Content Include="Views\Partials\ContactForm.cshtml" />
     <Content Include="Views\Partials\Header.cshtml" />
@@ -699,7 +695,6 @@
     <Content Include="Views\SilverNiti.cshtml" />
     <Content Include="Views\SilverNitiHomePage.cshtml" />
     <Content Include="Views\SilverNitiNavigation.cshtml" />
-    <Content Include="Views\TextPage.cshtml" />
     <Content Include="Views\Partials\Grid\Fanoe.cshtml" />
     <Content Include="Views\MacroPartials\ContactUsForm.cshtml" />
     <Content Include="App_Plugins\Grid\Editors\Render\embed_videowrapper.cshtml" />
@@ -753,10 +748,15 @@
     <Content Include="fonts\revicons90c6.eot" />
     <Content Include="fonts\revicons90c6.ttf" />
     <Content Include="fonts\revicons90c6.woff" />
-    <Content Include="App_Plugins\Ozzy\Grid\Widgets\employeeGrid.cshtml" />
     <Content Include="App_Plugins\Ozzy\Grid\Widgets\content2.cshtml" />
     <Content Include="Views\SilverNitiEmployee.cshtml" />
+    <Content Include="appsettings.QFINW132.json">
+      <DependentUpon>appsettings.json</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.supercuke.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
@@ -786,6 +786,15 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'supercuke|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />

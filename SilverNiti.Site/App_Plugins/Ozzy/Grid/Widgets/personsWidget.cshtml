@@ -14,11 +14,12 @@
         <div class="row clearfix">
             @foreach (var person in persons)
             {
-            <!--Team Member-->
+                var image = person.GetPropertyValue<IPublishedContent>("Image");                
+                <!--Person-->
                 <div class="team-member col-lg-3 col-md-6 col-sm-6 col-xs-12">
                     <div class="inner-box wow fadeIn animated" data-wow-delay="0ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeIn;">
                         <figure class="image-box" style="height:auto;width:auto">
-                            <img src="@person.GetPropertyValue("Image")" alt="">
+                            <img src="@image.Url" alt="">
                             @*<div class="overlay-box">
                                     <ul class="social-icon-one">
                                         <li><a href="#"><span class="fa fa-facebook-f"></span></a></li>

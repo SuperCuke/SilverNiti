@@ -17,6 +17,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
+		supercuke|Any CPU = supercuke|Any CPU
+		supercuke|x64 = supercuke|x64
+		supercuke|x86 = supercuke|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{B96BD6BE-C97C-457E-BE62-C093B98721AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -31,6 +34,12 @@ Global
 		{B96BD6BE-C97C-457E-BE62-C093B98721AB}.Release|x64.Build.0 = Release|Any CPU
 		{B96BD6BE-C97C-457E-BE62-C093B98721AB}.Release|x86.ActiveCfg = Release|Any CPU
 		{B96BD6BE-C97C-457E-BE62-C093B98721AB}.Release|x86.Build.0 = Release|Any CPU
+		{B96BD6BE-C97C-457E-BE62-C093B98721AB}.supercuke|Any CPU.ActiveCfg = supercuke|Any CPU
+		{B96BD6BE-C97C-457E-BE62-C093B98721AB}.supercuke|Any CPU.Build.0 = supercuke|Any CPU
+		{B96BD6BE-C97C-457E-BE62-C093B98721AB}.supercuke|x64.ActiveCfg = supercuke|Any CPU
+		{B96BD6BE-C97C-457E-BE62-C093B98721AB}.supercuke|x64.Build.0 = supercuke|Any CPU
+		{B96BD6BE-C97C-457E-BE62-C093B98721AB}.supercuke|x86.ActiveCfg = supercuke|Any CPU
+		{B96BD6BE-C97C-457E-BE62-C093B98721AB}.supercuke|x86.Build.0 = supercuke|Any CPU
 		{AA97E03A-1D6B-4477-9542-70D49114E35C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AA97E03A-1D6B-4477-9542-70D49114E35C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA97E03A-1D6B-4477-9542-70D49114E35C}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -43,6 +52,12 @@ Global
 		{AA97E03A-1D6B-4477-9542-70D49114E35C}.Release|x64.Build.0 = Release|Any CPU
 		{AA97E03A-1D6B-4477-9542-70D49114E35C}.Release|x86.ActiveCfg = Release|Any CPU
 		{AA97E03A-1D6B-4477-9542-70D49114E35C}.Release|x86.Build.0 = Release|Any CPU
+		{AA97E03A-1D6B-4477-9542-70D49114E35C}.supercuke|Any CPU.ActiveCfg = supercuke|Any CPU
+		{AA97E03A-1D6B-4477-9542-70D49114E35C}.supercuke|Any CPU.Build.0 = supercuke|Any CPU
+		{AA97E03A-1D6B-4477-9542-70D49114E35C}.supercuke|x64.ActiveCfg = supercuke|Any CPU
+		{AA97E03A-1D6B-4477-9542-70D49114E35C}.supercuke|x64.Build.0 = supercuke|Any CPU
+		{AA97E03A-1D6B-4477-9542-70D49114E35C}.supercuke|x86.ActiveCfg = supercuke|Any CPU
+		{AA97E03A-1D6B-4477-9542-70D49114E35C}.supercuke|x86.Build.0 = supercuke|Any CPU
 		{42014565-EA24-4FBC-94ED-8D3B1129FAD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{42014565-EA24-4FBC-94ED-8D3B1129FAD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42014565-EA24-4FBC-94ED-8D3B1129FAD7}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -55,6 +70,12 @@ Global
 		{42014565-EA24-4FBC-94ED-8D3B1129FAD7}.Release|x64.Build.0 = Release|Any CPU
 		{42014565-EA24-4FBC-94ED-8D3B1129FAD7}.Release|x86.ActiveCfg = Release|Any CPU
 		{42014565-EA24-4FBC-94ED-8D3B1129FAD7}.Release|x86.Build.0 = Release|Any CPU
+		{42014565-EA24-4FBC-94ED-8D3B1129FAD7}.supercuke|Any CPU.ActiveCfg = supercuke|Any CPU
+		{42014565-EA24-4FBC-94ED-8D3B1129FAD7}.supercuke|Any CPU.Build.0 = supercuke|Any CPU
+		{42014565-EA24-4FBC-94ED-8D3B1129FAD7}.supercuke|x64.ActiveCfg = supercuke|Any CPU
+		{42014565-EA24-4FBC-94ED-8D3B1129FAD7}.supercuke|x64.Build.0 = supercuke|Any CPU
+		{42014565-EA24-4FBC-94ED-8D3B1129FAD7}.supercuke|x86.ActiveCfg = supercuke|Any CPU
+		{42014565-EA24-4FBC-94ED-8D3B1129FAD7}.supercuke|x86.Build.0 = supercuke|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
