@@ -1,0 +1,76 @@
+﻿{
+    "gridEditors": [
+        {
+            "name": "Testimonials",
+            "alias": "ozzy.testimonials",
+            "view": "/app_plugins/Ozzy.Grid.Archetype/ozzy.archetype.editor.html",
+            "render": "/app_plugins/Ozzy.Testimonials/testimonialsWidget.cshtml",
+            "icon": "icon-code",
+            "config": {
+                "settings": [
+                    {
+                        "label": "Background color",
+                        "description": "Choose background color",
+                        "key": "class",
+                        "view": "radiobuttonlist",
+                        "prevalues": [
+                            "light",
+                            "dark",
+                            "yellow",
+                            "blue",
+                            "purple",
+                            "full",
+                            "full triangle"
+                        ]
+                    },
+                    {
+                        "label": "xxx",
+                        "description": "xxx",
+                        "key": "zzz",
+                        "view": "boolean"
+                    }
+                ],
+                "fieldsetGroups": [],
+                "hidePropertyLabels": false,
+                "showAdvancedOptions": false,
+                "startWithAddButton": false,
+                "hideFieldsetToolbar": false,
+                "enableMultipleFieldsets": false,
+                "hideFieldsetControls": true,
+                "hidePropertyLabel": true,
+                "maxFieldsets": 1,
+                "enableCollapsing": false,
+                "enableCloning": false,
+                "enableDisabling": false,
+                "enableDeepDatatypeRequests": false,
+                "enablePublishing": false,
+                "enableMemberGroups": false,
+                "enableCrossDragging": false,
+                "fieldsets": [
+                    {
+                        "alias": "xxx",
+                        "remove": false,
+                        "collapse": false,
+                        "labelTemplate": "",
+                        "icon": "",
+                        "label": "xxx",
+                        "properties": [
+                            {
+                                "alias": "testimonials",
+                                "remove": false,
+                                "collapse": false,
+                                "label": "Testimonials",
+                                "helpText": "",
+                                "dataTypeGuid": "f25c6f2f-ae0f-4318-a6d1-e5d650d7fb27",
+                                "value": "",
+                                "$$hashKey": "1XC"
+                            }
+                        ],
+                        "group": null,
+                        "$$hashKey": "1X3"
+                    }
+                ]
+            }
+        }
+    ]
+}

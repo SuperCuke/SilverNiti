@@ -2618,7 +2618,6 @@ img {
 
 .call-to-action {
     position: relative;
-    padding: 100px 0px;
     text-align: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -3312,87 +3311,7 @@ img {
             margin-right: 2px;
         }
 
-/*** 
 
-====================================================================
-	Testimonial Section
-====================================================================
-
-***/
-
-.testimonial-section {
-    position: relative;
-    padding: 80px 0px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center center;
-}
-
-    .testimonial-section:before {
-        position: absolute;
-        content: '';
-        left: 0px;
-        top: 0px;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(32,127,221,0.90);
-    }
-
-    .testimonial-section .owl-nav {
-        display: none !important;
-    }
-
-    .testimonial-section .testimonial-thumbs-carousel {
-        text-align: center;
-        padding: 30px 0px 30px 50px;
-    }
-
-        .testimonial-section .testimonial-thumbs-carousel .thumb-item {
-            width: 76px;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-
-        .testimonial-section .testimonial-thumbs-carousel img {
-            display: block;
-            width: 100%;
-            border-radius: 50%;
-        }
-
-    .testimonial-section .testimonial-carousel-outer .testimonial-content-carousel {
-        padding-right: 20px;
-        background: url(../images/icons/testimonial-direction.png) right center no-repeat;
-    }
-
-        .testimonial-section .testimonial-carousel-outer .testimonial-content-carousel li .quote-icon {
-            font-size: 14px;
-            margin: 0px 6px;
-        }
-
-        .testimonial-section .testimonial-carousel-outer .testimonial-content-carousel li {
-            color: #ffffff;
-            font-size: 18px;
-            font-weight: 400;
-            padding-top: 12px;
-            padding-right: 30px;
-            font-style: italic;
-            font-family: 'Hind Guntur', sans-serif;
-        }
-
-            .testimonial-section .testimonial-carousel-outer .testimonial-content-carousel li h3 {
-                color: #ffffff;
-                font-size: 15px;
-                font-weight: 700;
-                font-style: normal;
-                margin-top: 35px;
-                text-transform: uppercase;
-            }
-
-            .testimonial-section .testimonial-carousel-outer .testimonial-content-carousel li .text {
-                font-size: 14px;
-                font-style: normal;
-            }
 
 /*** 
 

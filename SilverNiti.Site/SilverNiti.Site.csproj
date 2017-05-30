@@ -753,6 +753,8 @@
     <Content Include="appsettings.QFINW132.json">
       <DependentUpon>appsettings.json</DependentUpon>
     </Content>
+    <Content Include="App_Plugins\Ozzy\Grid\Widgets\clientsWidget.cshtml" />
+    <Content Include="App_Plugins\Ozzy\Grid\Widgets\testimonialsWidget.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

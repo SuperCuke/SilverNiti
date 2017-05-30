@@ -1,0 +1,48 @@
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<dynamic>
+@using Umbraco;
+@{
+    var jsonString = Model.value.Value as string;
+    var configString = Model.editor.config.ToString() as string;
+
+    var archetype = jsonString.DeserializeJsonToArchetype(configString);
+    var testimonials = archetype.First().GetValue<ArchetypeModel>("testimonials");
+}
+
+<!--Testimonial Section-->
+<div class="testimonial">
+    <!--Tesimonial Carousel-->
+    <div class="testimonial-carousel-outer" style="display:flex">
+        @*<div class="column col-md-8 col-sm-12 col-xs-12">*@
+        <div style="width:60%">
+            <!--Tesimonial Content Carousel-->
+            <ul class="testimonial-content-carousel owl-carousel owl-theme">
+                @foreach (var testimonial in testimonials)
+                {
+                    var name = testimonial.GetValue<string>("name");
+                    var postion = testimonial.GetValue<string>("position");
+                    var quote = testimonial.GetValue<string>("testimonial");
+                    <li>
+                        <span class="quote-icon flaticon-left-quote"></span>@quote<span class="quote-icon flaticon-right-quotation-sign"></span>
+                        <div class="testimonial-quote-person">
+                            <h3>@name</h3>
+                            @postion
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+        @*<div class="column col-md-4 col-sm-6 col-xs-12">*@
+        <div style="width:39%">
+            <!--Testimonial Thumbs Carousel-->
+            <div class="testimonial-thumbs-carousel owl-carousel owl-theme">
+                @foreach (var testimonial in testimonials)
+                {
+                    var image = testimonial.GetValue<IPublishedContent>("image");
+                    <div class="thumb-item"><figure class="thumb-box"><img src="@image.GetCropUrl(76,76)" alt=""></figure></div>
+                }
+            </div>
+        </div>
+    </div>
+    <!--End Tesimonial Carousel-->
+</div>
+<!--End Testimonial Section-->

@@ -1,0 +1,61 @@
+﻿{
+    "gridEditors": [
+        {
+            "name": "Clients Widget",
+            "alias": "ozzy.clients",
+            "view": "/app_plugins/Ozzy.Grid.Archetype/ozzy.archetype.editor.html",
+            "render": "/app_plugins/Ozzy.Clients/clientsWidget.cshtml",
+            "icon": "icon-code",
+            "config": {
+                "settings": [
+                    {
+                        "label": "Max Number of elements",
+                        "description": "Max Number of elements",
+                        "key": "elementsNumber",
+                        "view": "number"
+                    }
+                ],
+                "showAdvancedOptions": false,
+                "startWithAddButton": false,
+                "hideFieldsetToolbar": false,
+                "enableMultipleFieldsets": false,
+                "hideFieldsetControls": false,
+                "hidePropertyLabel": false,
+                "maxFieldsets": null,
+                "enableCollapsing": true,
+                "enableCloning": false,
+                "enableDisabling": true,
+                "enableDeepDatatypeRequests": false,
+                "enablePublishing": false,
+                "enableMemberGroups": false,
+                "enableCrossDragging": false,
+                "fieldsets": [
+                    {
+                        "alias": "clients",
+                        "remove": false,
+                        "collapse": false,
+                        "labelTemplate": "",
+                        "icon": "",
+                        "label": "Clients",
+                        "properties": [                      
+                            {
+                                "alias": "clients",
+                                "remove": false,
+                                "collapse": false,
+                                "label": "Clients",
+                                "helpText": "",
+                                "dataTypeGuid": "969d38b1-7ca1-42e5-880e-2c20f0584312",
+                                "value": "",
+                                "$$hashKey": "0PP"
+                            }
+                        ],
+                        "group": null,
+                        "$$hashKey": "0PG",
+                        "aliasIsDirty": true
+                    }
+                ],
+                "fieldsetGroups": []
+            }
+        }
+    ]
+}

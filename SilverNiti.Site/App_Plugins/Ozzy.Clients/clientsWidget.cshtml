@@ -1,0 +1,26 @@
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<dynamic>
+@using Umbraco;
+@{
+    var jsonString = Model.value.Value as string;
+    var configString = Model.editor.config.ToString() as string;
+    string number = Model?.config?.elementsNumber?.ToString() ?? "3";
+
+    var archetype = jsonString.DeserializeJsonToArchetype(configString);
+    var clients = archetype.First().GetValue<ArchetypeModel>("clients");
+    var id = Guid.NewGuid().ToString();
+}
+
+<div class="sponsors-outer">
+    <!--Sponsors Carousel-->
+    <ul class="sponsors-carousel owl-carousel owl-theme" elements-number="@number">
+        @foreach (var client in clients)
+        {
+            var image = client.GetValue<IPublishedContent>("icon");
+            <li class="slide-item">
+                <figure class="clients-image-box">
+                    <a href="#"><img src="@image.Url" alt=""></a>
+                </figure>
+            </li>
+        }
+    </ul>
+</div>
