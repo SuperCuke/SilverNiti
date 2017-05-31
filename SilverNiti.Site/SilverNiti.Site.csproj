@@ -588,6 +588,8 @@
     <Content Include="css\hover.css" />
     <Content Include="css\jquery.fancybox.css" />
     <Content Include="css\owl.css" />
+    <Content Include="css\plugins\clients.css" />
+    <Content Include="css\plugins\testimonial.css" />
     <Content Include="css\responsive.css" />
     <Content Include="css\revolution-slider.css" />
     <Content Include="css\rte.css" />
@@ -630,6 +632,7 @@
     <Content Include="images\logo-5.png" />
     <Content Include="images\logo-small.png" />
     <Content Include="images\logo.png" />
+    <Content Include="images\plugins\testimonial-direction.png" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\donut-chart-custom.js" />
     <Content Include="js\doughnut-chart.js" />
@@ -642,6 +645,8 @@
     <Content Include="js\map-script.js" />
     <Content Include="js\mixitup.js" />
     <Content Include="js\owl.js" />
+    <Content Include="js\plugins\testimonials.js" />
+    <Content Include="js\plugins\clients.js" />
     <Content Include="js\respond.js" />
     <Content Include="js\revolution.min.js" />
     <Content Include="js\script.js" />
@@ -686,8 +691,6 @@
     <Content Include="App_Plugins\uSync\package.manifest" />
     <Content Include="App_Plugins\uSync.Content\package.manifest" />
     <Content Include="Views\ContentPage.cshtml" />
-    <Content Include="Views\HomePage.cshtml" />
-    <Content Include="Views\Main.cshtml" />
     <Content Include="Views\Partials\BottomNavigation.cshtml" />
     <Content Include="Views\Partials\ContactForm.cshtml" />
     <Content Include="Views\Partials\Header.cshtml" />
@@ -721,7 +724,7 @@
     <Content Include="App_Plugins\Ozzy\Grid\Widgets\mainSlider.cshtml" />
     <Content Include="App_Plugins\Ozzy\Grid\Widgets\serviceList.cshtml" />
     <Content Include="App_Plugins\Ozzy\package.manifest" />
-    <Content Include="App_Plugins\Ozzy\Web.config" />
+    <Content Include="App_Plugins\Web.config" />
     <Content Include="App_Plugins\Ozzy.Grid.Archetype\package.manifest" />
     <Content Include="App_Plugins\Ozzy.Grid\package.manifest" />
     <Content Include="App_Plugins\Ozzy.Grid\Render\Base.cshtml" />
@@ -753,8 +756,13 @@
     <Content Include="appsettings.QFINW132.json">
       <DependentUpon>appsettings.json</DependentUpon>
     </Content>
-    <Content Include="App_Plugins\Ozzy\Grid\Widgets\clientsWidget.cshtml" />
-    <Content Include="App_Plugins\Ozzy\Grid\Widgets\testimonialsWidget.cshtml" />
+    <Content Include="App_Plugins\Ozzy.Clients\clientsWidget.cshtml" />
+    <Content Include="App_Plugins\Ozzy.Testimonials\testimonialsWidget.cshtml" />
+    <Content Include="App_Plugins\Ozzy.Testimonials\package.manifest" />
+    <Content Include="Views\Partials\Footer.cshtml" />
+    <Content Include="Views\Partials\Rest.cshtml" />
+    <Content Include="App_Plugins\Ozzy.Clients\package.manifest" />
+    <Content Include="App_Plugins\Ozzy.Clients\testimonialsWidget.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
