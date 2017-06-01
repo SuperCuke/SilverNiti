@@ -763,6 +763,8 @@
     <Content Include="Views\Partials\Rest.cshtml" />
     <Content Include="App_Plugins\Ozzy.Clients\package.manifest" />
     <Content Include="App_Plugins\Ozzy.Clients\testimonialsWidget.cshtml" />
+    <Content Include="Views\Partials\Contacts.cshtml" />
+    <Content Include="Views\Partials\SocialIcons.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,17 @@
+@model SilverNitiViewModel
+<!--social links-->
+<div class="social-links pull-left clearfix">
+    @foreach (var socialLink in @Model.Home.SocialLinks)
+    {
+        var icon = socialLink.GetValue<string>("icon");
+        var link = socialLink.GetValue<Link>("link");
+        if (socialLink.Alias == "fontAwesomeIcons")
+        {
+            <a href="@link.Url"><span class="fa @icon"></span></a>
+        }
+        if (socialLink.Alias == "flatIconIcons")
+        {
+            <a href="@link.Url"><span class="icon @icon"></span></a>
+        }
+    }
+</div>

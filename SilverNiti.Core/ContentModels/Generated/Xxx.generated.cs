@@ -46,6 +46,24 @@ namespace SilverNiti.Core.ContentModels
 		}
 
 		///<summary>
+		/// content
+		///</summary>
+		[ImplementPropertyType("content")]
+		public Archetype.Models.ArchetypeModel Content
+		{
+			get { return this.GetPropertyValue<Archetype.Models.ArchetypeModel>("content"); }
+		}
+
+		///<summary>
+		/// content2
+		///</summary>
+		[ImplementPropertyType("content2")]
+		public Archetype.Models.ArchetypeModel Content2
+		{
+			get { return this.GetPropertyValue<Archetype.Models.ArchetypeModel>("content2"); }
+		}
+
+		///<summary>
 		/// events
 		///</summary>
 		[ImplementPropertyType("events")]
@@ -61,6 +79,15 @@ namespace SilverNiti.Core.ContentModels
 		public IEnumerable<IPublishedContent> Events2
 		{
 			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("events2"); }
+		}
+
+		///<summary>
+		/// testimonials
+		///</summary>
+		[ImplementPropertyType("testimonials")]
+		public Archetype.Models.ArchetypeModel Testimonials
+		{
+			get { return this.GetPropertyValue<Archetype.Models.ArchetypeModel>("testimonials"); }
 		}
 	}
 }

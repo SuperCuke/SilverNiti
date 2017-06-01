@@ -1,101 +1,11 @@
-<!--Main Footer / Footer Style One-->
-<footer class="main-footer footer-style-one">
-    <!--Widgets Section-->
-    <div class="widgets-section">
-        <div class="auto-container">
-            <div class="row clearfix">
-                <!--Footer Column-->
-                <div class="footer-column col-md-4 col-sm-6 col-xs-12">
-                    <div class="footer-widget contact-widget">
-                        <div class="footer-logo">
-                            <a href="index.html"><img src="images/logo-2.png" alt="" /></a>
-                        </div>
-                        <div class="widget-content">
-                            <div class="text">The ship set ground on the shore that this come group would somehow form a family is a that's the way the on the shore that this group world.</div>
-                            <figure>
-                                <img src="images/resource/locations-map.png" alt="" />
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-                <!--Footer Column-->
-                <div class="footer-column col-md-4 col-sm-6 col-xs-12">
-                    <div class="footer-widget posts-widget ">
-                        <!--links-widget-->
-                        <div class="footer-title">
-                            <h2>RECENT POSTS</h2>
-                            <div class="separeter-line">
-                                <div class="line-one"></div>
-                                <div class="line-two"></div>
-                            </div>
-                        </div>
-                        <div class="widget-content">
-                            <div class="widget-content">
-                                <!--Post-->
-                                <div class="post">
-                                    <figure class="image"><a href="blog-single.html"><img src="images/resource/post-thumb-1.jpg" alt=""></a></figure>
-                                    <div class="text"><a href="blog-single.html">The ship set ground on the shore that this somehow form a family.</a></div>
-                                    <div class="time">Sep 27, 2016   /   by Admin</div>
-                                </div>
-                                <!--Post-->
-                                <div class="post">
-                                    <figure class="image"><a href="blog-single.html"><img src="images/resource/post-thumb-2.jpg" alt=""></a></figure>
-                                    <div class="text"><a href="blog-single.html">The ship set ground on the shore that this somehow form a family.</a></div>
-                                    <div class="time">Oct 05, 2016   /   by Admin</div>
-                                </div>
-                                <!--Post-->
-                                <div class="post">
-                                    <figure class="image"><a href="blog-single.html"><img src="images/resource/post-thumb-3.jpg" alt=""></a></figure>
-                                    <div class="text"><a href="blog-single.html">The ship set ground on the shore that this somehow form a family.</a></div>
-                                    <div class="time">Nov 13, 2016   /   by Admin</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Footer Column-->
-                <div class="footer-column col-md-4 col-sm-7 col-xs-12">
-                    <div class="footer-widget posts-widget">
-                        <div class="footer-title">
-                            <h2>SEND US A MESSAGE</h2>
-                            <div class="separeter-line">
-                                <div class="line-one"></div>
-                                <div class="line-two"></div>
-                            </div>
-                        </div>
-                        <!--Footer Form-->
-                        <div class="footer-form">
-                            <form method="post" action="contact.html">
-                                <div class="row clearfix">
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <div class="form-group">
-                                            <input type="text" name="text" value="" placeholder="Your Name *" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <div class="form-group">
-                                            <input type="email" name="email" value="" placeholder="Your Email *" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <div class="form-group">
-                                            <textarea name="message" placeholder="Message"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
-                                        <div class="form-group button-group">
-                                            <button type="submit" class="theme-btn btn-style-one">Send Message</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+@model SilverNitiViewModel
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<!--Main Footer -->
+<footer class="main-footer footer-style-one">
+    @if (Model.Home.ShowFooterContent)
+    {
+        @Html.GetGridHtml(Model.Home, "footerContent", "fanoe")
+    }
     <!--Footer Bottom-->
     <div class="footer-bottom">
         <div class="auto-container">
@@ -103,4 +13,4 @@
         </div>
     </div>
 </footer>
-<!--End Main Footer / Footer Style One-->
+<!--End Main Footer-->

@@ -1,9 +1,6 @@
 ﻿using Archetype.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ozzy.Umbraco.Models.Archetypes
 {
@@ -22,8 +19,8 @@ namespace Ozzy.Umbraco.Models.Archetypes
             this.Link = fieldset.GetValue<Link>("item");
             if (!string.Equals(fieldset.Alias, "navigationMenu"))
                 return;
-            this.Childrens = new NavigationMenu((IEnumerable<ArchetypeFieldsetModel>)fieldset.GetValue<ArchetypeModel>("childrens"));
-            this.HasChildrens = this.Childrens.Any<NavigationItem>();
+            this.Childrens = new NavigationMenu(fieldset.GetValue<ArchetypeModel>("childrens"));
+            this.HasChildrens = this.Childrens.Any();
         }
     }
 }

@@ -23,6 +23,16 @@ namespace SilverNiti.Core.Controllers
         }
 
         [ChildActionOnly]
+        public ActionResult Contacts()
+        {
+            var root = Umbraco.TypedContentAtRoot().First();
+            var home = new SilverNiti.Core.ContentModels.SilverNitiHomePage(root);
+            var mainMenu = new NavigationMenu(home.MainMenu);
+            var navigation = new NavigationViewModel<NavigationViewModelItem>(mainMenu, CurrentPage);
+            return PartialView("Contacts", navigation);
+        }
+
+        [ChildActionOnly]
         public ActionResult Footer()
         {
             var root = Umbraco.TypedContentAtRoot().First();

@@ -1,8 +1,5 @@
 ﻿using Ozzy.Umbraco.DocumentTypes;
 using System.Web;
-using Umbraco.Core.Models;
-using Umbraco.Web;
-using Umbraco.Web.Models;
 
 namespace Ozzy.Umbraco.ViewModels
 {

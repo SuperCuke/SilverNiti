@@ -46,7 +46,7 @@ namespace SilverNiti.Core.ContentModels
 		}
 
 		///<summary>
-		/// Content
+		/// PageContent
 		///</summary>
 		[ImplementPropertyType("content")]
 		public Newtonsoft.Json.Linq.JToken Content

@@ -1,0 +1,15 @@
+@model SilverNitiViewModel
+
+<ul class="info-links clearfix">
+    @foreach (var contact in @Model.Home.Contacts)
+    {
+        if (contact.Alias == "phone")
+        {
+            <li><a href="#"><span class="icon flaticon-technology-1"></span>@contact.GetValue("phone")</a></li>
+        }
+        if (contact.Alias == "email")
+        {
+            <li><a href="#"><span class="icon flaticon-envelope"></span>@contact.GetValue("email")</a></li>
+        }
+    }
+</ul>

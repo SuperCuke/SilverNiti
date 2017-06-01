@@ -475,7 +475,7 @@
     <Compile Include="ContentModels\Generated\SilverNitiNavigation.generated.cs" />
     <Compile Include="ContentModels\Generated\SilverNitiSeo.generated.cs" />
     <Compile Include="ContentModels\Generated\Xxx.generated.cs" />
-    <Compile Include="Controllers\SilverNitiHomePageController.cs" />
+    <Compile Include="Controllers\SilverNitiPageController.cs" />
     <Compile Include="Controllers\Surface\ContactFormController.cs" />
     <Compile Include="Controllers\Surface\PartialsSurfaceController.cs" />
     <Compile Include="DomainEvents\ContactFormMessageRecieved.cs" />
@@ -491,6 +491,7 @@
     <Compile Include="SilverNitiDb.cs" />
     <Compile Include="StartupHandler.cs" />
     <Compile Include="ViewModels\ContactFormViewModel.cs" />
+    <Compile Include="ViewModels\SilverNitiViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ozzy.Umbraco\Ozzy.Umbraco.csproj">

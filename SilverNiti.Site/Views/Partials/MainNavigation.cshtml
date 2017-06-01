@@ -1,4 +1,5 @@
-@model NavigationViewModel<NavigationViewModelItem>
+@*@model NavigationViewModel<NavigationViewModelItem>*@
+@model SilverNitiViewModel
 <nav class="main-menu">
     <div class="navbar-header">
         <!-- Toggle Button -->
@@ -10,7 +11,7 @@
     </div>
     <div class="navbar-collapse collapse clearfix">
         <ul class="navigation clearfix">
-            @foreach (var page in @Model)
+            @foreach (var page in @Model.NavigationViewModel)
             {
                 var classname = String.Empty;
                 if (page.IsActive) { classname = classname + "current "; }

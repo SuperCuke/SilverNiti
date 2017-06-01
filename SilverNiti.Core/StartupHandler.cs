@@ -17,6 +17,7 @@ using SilverNiti.Core.LightInject.Mvc;
 using SilverNiti.Core.LightInject.WebApi;
 using SilverNiti.Core.LightInject.Web;
 using SilverNiti.Core.LightInject.Microsoft.DependencyInjection;
+using SilverNiti.Core.Controllers;
 
 namespace SilverNiti.Core
 {
@@ -36,7 +37,7 @@ namespace SilverNiti.Core
         public void OnApplicationStarting(UmbracoApplicationBase umbracoApplication,
             ApplicationContext applicationContext)
         {
-            DefaultRenderMvcControllerResolver.Current.SetDefaultControllerType(typeof(BaseController));
+            DefaultRenderMvcControllerResolver.Current.SetDefaultControllerType(typeof(SilverNitiPageController));
         }
 
         public void OnApplicationStarted(UmbracoApplicationBase umbracoApplication,

@@ -46,6 +46,15 @@ namespace SilverNiti.Core.ContentModels
 		}
 
 		///<summary>
+		/// Contacts
+		///</summary>
+		[ImplementPropertyType("contacts")]
+		public Archetype.Models.ArchetypeModel Contacts
+		{
+			get { return this.GetPropertyValue<Archetype.Models.ArchetypeModel>("contacts"); }
+		}
+
+		///<summary>
 		/// Content
 		///</summary>
 		[ImplementPropertyType("content")]
@@ -55,12 +64,48 @@ namespace SilverNiti.Core.ContentModels
 		}
 
 		///<summary>
+		/// Copyright
+		///</summary>
+		[ImplementPropertyType("copyright")]
+		public string Copyright
+		{
+			get { return this.GetPropertyValue<string>("copyright"); }
+		}
+
+		///<summary>
+		/// Footer Content
+		///</summary>
+		[ImplementPropertyType("footerContent")]
+		public Newtonsoft.Json.Linq.JToken FooterContent
+		{
+			get { return this.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("footerContent"); }
+		}
+
+		///<summary>
 		/// Main Menu
 		///</summary>
 		[ImplementPropertyType("mainMenu")]
 		public Archetype.Models.ArchetypeModel MainMenu
 		{
 			get { return this.GetPropertyValue<Archetype.Models.ArchetypeModel>("mainMenu"); }
+		}
+
+		///<summary>
+		/// Show Footer Content
+		///</summary>
+		[ImplementPropertyType("showFooterContent")]
+		public bool ShowFooterContent
+		{
+			get { return this.GetPropertyValue<bool>("showFooterContent"); }
+		}
+
+		///<summary>
+		/// Social Links
+		///</summary>
+		[ImplementPropertyType("socialLinks")]
+		public Archetype.Models.ArchetypeModel SocialLinks
+		{
+			get { return this.GetPropertyValue<Archetype.Models.ArchetypeModel>("socialLinks"); }
 		}
 
 		///<summary>

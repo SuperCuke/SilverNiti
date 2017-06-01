@@ -1,9 +1,6 @@
 ﻿using Archetype.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ozzy.Umbraco.Models.Archetypes
 {
@@ -22,7 +19,7 @@ namespace Ozzy.Umbraco.Models.Archetypes
 
         public static List<NavigationItem> GetItems(ArchetypeModel model)
         {
-            return model.Select<ArchetypeFieldsetModel, NavigationItem>((Func<ArchetypeFieldsetModel, NavigationItem>)(fieldset => new NavigationItem(fieldset))).ToList<NavigationItem>();
+            return model.Select(fieldset => new NavigationItem(fieldset)).ToList();
         }
     }
 }
