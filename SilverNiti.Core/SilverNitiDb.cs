@@ -7,6 +7,11 @@ namespace SilverNiti.Core
 {
     public class SilverNitiDb : AggregateDbContext
     {
+        public SilverNitiDb() 
+            : base(new DbContextOptionsBuilder<SilverNitiDb>().UseSqlServer("Server=.\\SQLEXPRESS;Database=silverniti-test;Integrated Security=true").Options)
+        {
+        }
+
         public SilverNitiDb(IExtensibleOptions<SilverNitiDb> options) : base(options)
         {
         }
