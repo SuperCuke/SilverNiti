@@ -4,6 +4,8 @@ using Ozzy.DomainModel;
 using Ozzy.Server;
 using SilverNiti.Core.DomainEvents;
 using Typesafe.Mailgun;
+using Microsoft.Extensions.Options;
+using SilverNiti.Core.Domain;
 
 namespace SilverNiti.Core.Saga
 {
@@ -13,7 +15,7 @@ namespace SilverNiti.Core.Saga
         IHandleEvent<ContactFormMessageSaga.SendGreetingEmail>,
         IHandleEvent<ContactFormMessageSaga.SendNotificationToAdministrator>
     {
-        private IMailgunClient _mailgun;
+      //  private IMailgunClient _mailgun;
 
         public class Data
         {
@@ -31,14 +33,12 @@ namespace SilverNiti.Core.Saga
             public string From { get; protected set; }
             public string Message { get; protected set; }
             public string Subject { get; protected set; }
-
+          
             public SendGreetingEmail(ContactFormMessageSaga saga) : base(saga)
             {
-                Guard.ArgumentNotNull(saga, nameof(saga));
                 To = saga.State.From;
-                From = "admin@silverniti.ru";
-                Message = "Thank for you message. We will contact yoyu back soon";
-                Subject = "Your message is imporant for us!";
+                From = saga.MailgunConfiguration.FromEmail;
+                Message = saga.State.Message;
             }
 
             //Serializable constructor
@@ -59,9 +59,12 @@ namespace SilverNiti.Core.Saga
 
         //private IMediator _mediator;
 
-        public ContactFormMessageSaga(IMailgunClient mailgun)
+        public IMailgunClient MailgunClient { get; set; }
+        public MailgunConfiguration MailgunConfiguration { get; set; }
+        public ContactFormMessageSaga(IMailgunClient mailgunClient, IOptions<MailgunConfiguration> mailgunOptions)
         {
-            _mailgun = mailgun;
+            MailgunClient = mailgunClient;
+            MailgunConfiguration = mailgunOptions.Value;
         }
 
         public bool Handle(ContactFormMessageRecieved message)
@@ -77,8 +80,12 @@ namespace SilverNiti.Core.Saga
 
         public bool Handle(SendGreetingEmail message)
         {
-            var mail = new MailMessage(message.From, message.To, message.Subject, message.Message);
-            _mailgun.SendMail(mail);
+            MailgunClient.SendMail(new MailMessage(MailgunConfiguration.FromEmail, State.From)
+            {
+                Subject = "Your message is imporant for us!",
+                Body = "Thank for you message. We will contact yoyu back soon"
+            });
+
             State.GreetingEmailSent = true;
             CheckSagaComplete();
             return false;
@@ -86,13 +93,14 @@ namespace SilverNiti.Core.Saga
 
         public bool Handle(SendNotificationToAdministrator message)
         {
-            //var command = new EmailMailCommand()
-            //{
-            //    To = "inbox@ozzy.com",
-            //    From = State.From,
-            //    Message = State.Message
-            //};        
-            //_mediator.Send(command);
+            MailgunClient.SendMail(new MailMessage(MailgunConfiguration.FromEmail, State.From)
+            {
+                Subject = "New email from customer",
+                Body = $"New message from customer /n" +
+                $"Email: {State.From} /n" +
+                $"Message: {State.Message} /n"
+            });
+
             State.AdminEmailSent = true;
             CheckSagaComplete();
             return false;

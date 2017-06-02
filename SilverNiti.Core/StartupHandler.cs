@@ -18,6 +18,9 @@ using SilverNiti.Core.LightInject.WebApi;
 using SilverNiti.Core.LightInject.Web;
 using SilverNiti.Core.LightInject.Microsoft.DependencyInjection;
 using SilverNiti.Core.Controllers;
+using SilverNiti.Core.Domain;
+using Microsoft.Extensions.Options;
+using Typesafe.Mailgun;
 
 namespace SilverNiti.Core
 {
@@ -57,6 +60,10 @@ namespace SilverNiti.Core
             Configuration = builder.Build();
 
             var services = new ServiceCollection();
+            services.AddOptions();
+
+            services.Configure<MailgunConfiguration>(Configuration.GetSection("Mailgun"));
+
             services.AddSingleton<ISerializer, ContractlessMessagePackSerializer>();
             services
             .AddOzzyDomain<SilverNitiDb>(options =>
@@ -72,6 +79,12 @@ namespace SilverNiti.Core
             services.ConfigureOzzyNode<SilverNitiDb>()
                 .UseEFBackgroundTaskService<SilverNitiDb>();
 
+            services.AddSingleton<IMailgunClient>((x) =>
+            {
+                var mailGunOptions = x.GetService<IOptions<MailgunConfiguration>>();
+                return new MailgunClient(mailGunOptions.Value.Domain, mailGunOptions.Value.Key, 3);
+            });
+            
             var container = new ServiceContainer();
             container.RegisterControllers();
             container.RegisterApiControllers();
@@ -79,7 +92,7 @@ namespace SilverNiti.Core
             container.RegisterApiControllers(typeof(UmbracoApplication).Assembly);
             container.EnablePerWebRequestScope();
             container.EnableMvc();
-            container.EnableWebApi(GlobalConfiguration.Configuration);
+            container.EnableWebApi(GlobalConfiguration.Configuration);        
             ServiceProvider = container.CreateServiceProvider(services);
             OzzyNode = ServiceProvider.GetService<OzzyNode>();
             var starter = new OzzyStarter(OzzyNode);
