@@ -480,6 +480,7 @@
     <Compile Include="Controllers\Surface\PartialsSurfaceController.cs" />
     <Compile Include="DomainEvents\ContactFormMessageRecieved.cs" />
     <Compile Include="Domain\ContactFormMessage.cs" />
+    <Compile Include="Domain\MailgunConfiguration.cs" />
     <Compile Include="LightInject.Microsoft.DependencyInjection\LightInject.Microsoft.DependencyInjection.cs" />
     <Compile Include="LightInject.WebApi\LightInject.WebApi.cs" />
     <Compile Include="LightInject.Web\LightInject.Web.cs" />

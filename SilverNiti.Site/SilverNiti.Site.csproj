@@ -765,6 +765,7 @@
     <Content Include="App_Plugins\Ozzy.Clients\testimonialsWidget.cshtml" />
     <Content Include="Views\Partials\Contacts.cshtml" />
     <Content Include="Views\Partials\SocialIcons.cshtml" />
+    <Content Include="appsettings.QFINW086.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
