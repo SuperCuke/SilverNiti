@@ -15,7 +15,7 @@ namespace SilverNiti.Core.Saga
         IHandleEvent<ContactFormMessageSaga.SendGreetingEmail>,
         IHandleEvent<ContactFormMessageSaga.SendNotificationToAdministrator>
     {
-      //  private IMailgunClient _mailgun;
+        //  private IMailgunClient _mailgun;
 
         public class Data
         {
@@ -29,11 +29,11 @@ namespace SilverNiti.Core.Saga
 
         public class SendGreetingEmail : SagaCommand
         {
-            public string To { get; protected set; }
-            public string From { get; protected set; }
-            public string Message { get; protected set; }
-            public string Subject { get; protected set; }
-          
+            public string To { get; set; }
+            public string From { get; set; }
+            public string Message { get; set; }
+            public string Subject { get; set; }
+
             public SendGreetingEmail(ContactFormMessageSaga saga) : base(saga)
             {
                 To = saga.State.From;
@@ -42,7 +42,7 @@ namespace SilverNiti.Core.Saga
             }
 
             //Serializable constructor
-            protected SendGreetingEmail()
+            public SendGreetingEmail()
             {
             }
         }
